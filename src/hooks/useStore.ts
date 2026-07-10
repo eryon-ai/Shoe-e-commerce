@@ -1,0 +1,6 @@
+export const useStore = <T, F>(
+  store: (callback: (state: T) => unknown) => unknown,
+  callback: (state: T) => F,
+) => {
+  return store(callback) as F | undefined
+}
